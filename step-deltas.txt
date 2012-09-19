@@ -1,0 +1,7 @@
+git difftool -t meld -y 164ac509327c07c51c3ceabf43ce5f512db8bf18^..164ac509327c07c51c3ceabf43ce5f512db8bf18 # > step2.diff
+git difftool -t meld -y f7e8450374cd882e4c334f2378c328953cc93c1c^..f7e8450374cd882e4c334f2378c328953cc93c1c #> step3.diff
+git difftool -t meld -y 3b77fb68f45baa6d171246b5be4fd5ff2da0e8f0^..3b77fb68f45baa6d171246b5be4fd5ff2da0e8f0 #> step4.diff
+git difftool -t meld -y e43eca841814d206b58dd75780f76bcaa8316ce3^..e43eca841814d206b58dd75780f76bcaa8316ce3 #> step5.diff
+git difftool -t meld -y 97a49987f6160be5bb0e4f870421855dbc7e7503^..97a49987f6160be5bb0e4f870421855dbc7e7503 #> step6.diff
+git difftool -t meld -y 9b510c57f5a5cc73a9775bf85fe773aca4a5d6a2^..9b510c57f5a5cc73a9775bf85fe773aca4a5d6a2 #> step7.diff
+git difftool -t meld -y d820ea9ba664df8d4e5e1222acac6f35a6dfe90d^..d820ea9ba664df8d4e5e1222acac6f35a6dfe90d #> step8.diff
