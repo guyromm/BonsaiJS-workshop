@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Paddles</title>
+
+    <link rel="apple-touch-icon-precomposed" href="img/icon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icon-ipad.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icon-retina.png" />
+
+    <link rel="apple-touch-startup-image" href="img/startup-ipad-retina.jpg" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name = "viewport" content = "width = device-width, user-scalable = no">
+
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+  </head>
+  <body>
+    <div id="player"></div>
+    <script src="../lib/bonsai.iframe.js"></script>
+    <script type="bs" id="bs">
+      requirejs.config({
+        baseUrl: '../src',
+        paths: {
+          lib: '../lib'
+        },
+        urlArgs: 'phoey'+Math.random() // cache buster
+      });
+    </script>
+    <script>
+
+    </script>
+  </body>
+</html>
