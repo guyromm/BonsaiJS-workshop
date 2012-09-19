@@ -5,7 +5,8 @@ define([], function(){
   }
 
   Screen.list = [
-    'loading'
+    'loading',
+    'game'
   ];
 
   Screen.create = function(name){

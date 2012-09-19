@@ -39,7 +39,7 @@ define([
      * screens and then showing the main menu
      */
     start: function(){
-      this.screens.add(['loading']);
+      this.screens.add(['loading', 'game']);
       this.emit('next-screen');
     }
   };

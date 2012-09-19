@@ -1,7 +1,9 @@
 define([
-  'js/screens/loading'
+  'js/screens/loading',
+  'js/screens/game',
 ], function(
-  Loading
+  Loading,
+  Game
 ){
   /**
    * Handler of screens. Shows and hides different views.
@@ -24,7 +26,8 @@ define([
   }
 
   Screens.byName = {
-    loading: Loading
+    loading: Loading,
+    game: Game
   };
 
   Screens.prototype = {

@@ -27,9 +27,7 @@
       });
 
       require(['js/main'], function(Main){
-        var m = new Main();
-        m.emit('init');
-        console.log(m);
+        new Main().emit('init');
       });
     </script>
     <script>
@@ -44,8 +42,7 @@
         assetBaseUrl: '.',
         width: 768,
         height: 1024,
-        framerate: 30,
-        fpsLog: true
+        framerate: 30
       });
     </script>
   </body>
