@@ -1,8 +1,9 @@
 define([
   'js/screen',
   'js/config',
-  'js/ball'
-], function(Screen, config, Ball){
+  'js/ball',
+  'js/paddle'
+], function(Screen, config, Ball, Paddle){
 
   /**
    * @constructor
@@ -80,6 +81,8 @@ define([
      */
     draw: function() {
       this.ball.draw();
+      this.topPaddle.draw();
+      this.bottomPaddle.draw();
     },
 
     newGame: function() {
@@ -88,6 +91,20 @@ define([
       }
 
       this.container = new Group().addTo(stage);
+
+      this.topPaddle = new Paddle(this, true, config.topPaddle, {
+        x: this.width /  2,
+        y: config.ball.height + config.topPaddle.height
+      });
+
+      var userPaddle = this.bottomPaddle = new Paddle(this, false, config.bottomPaddle, {
+        x: this.width /  2,
+        y: this.height - config.ball.height - config.bottomPaddle.height
+      });
+
+      stage.on('pointermove', function(e) {
+        userPaddle.x = e.stageX;
+      });
 
       this.newRound();
     },
