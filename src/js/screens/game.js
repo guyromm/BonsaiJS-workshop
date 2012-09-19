@@ -3,8 +3,9 @@ define([
   'js/config',
   'js/ball',
   'js/paddle',
-  'js/player'
-], function(Screen, config, Ball, Paddle, Player){
+  'js/player',
+  'js/powerups'
+], function(Screen, config, Ball, Paddle, Player, powerups){
 
   /**
    * @constructor
@@ -81,6 +82,7 @@ define([
      * object to the canvas
      */
     draw: function() {
+      powerups.draw();
       this.ball.draw();
       this.topPaddle.draw();
       this.bottomPaddle.draw();
@@ -143,6 +145,8 @@ define([
           }, 1000)
         }
       });
+
+      powerups.init(this.ball);
     }
 
   };
