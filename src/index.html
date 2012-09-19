@@ -27,7 +27,9 @@
       });
 
       require(['js/main'], function(Main){
-        new Main().emit('init');
+        var m = new Main();
+        m.emit('init');
+        console.log(m);
       });
     </script>
     <script>

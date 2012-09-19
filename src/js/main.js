@@ -1,7 +1,8 @@
 console.log("Start")
 define([
-  'lib/pubsub'
-], function(PubSub){
+  'lib/pubsub',
+  'js/screens'
+], function(PubSub, Screens){
   /**
    * Root object for this game. Contains generic stuff.
    *
@@ -10,6 +11,9 @@ define([
    */
   function Main(){
     PubSub.call(this); // super();
+
+    // ui system
+    this.screens = new Screens(this);
 
     this.onceOn('init', this.init, this);
   }
@@ -35,7 +39,8 @@ define([
      * screens and then showing the main menu
      */
     start: function(){
-
+      this.screens.add(['loading']);
+      this.emit('next-screen');
     }
   };
 
