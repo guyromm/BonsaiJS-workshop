@@ -25,9 +25,26 @@
         },
         urlArgs: 'phoey'+Math.random() // cache buster
       });
+
+      require(['js/main'], function(Main){
+        new Main().emit('init');
+      });
     </script>
     <script>
-
+      this.bonsai = bonsai.run(document.getElementById('player'), {
+        code: document.getElementById('bs').innerHTML,
+        urls: [
+          '../lib/requirejs.2.0.5.js'
+        ],
+        plugins: [
+          '../lib/bonsai.plugin.fade_and_destroy.js'
+        ],
+        assetBaseUrl: '.',
+        width: 768,
+        height: 1024,
+        framerate: 30,
+        fpsLog: true
+      });
     </script>
   </body>
 </html>
