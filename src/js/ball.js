@@ -118,9 +118,11 @@ define([], function() {
       }
 
       if ( this.isAtBottom() ) {
+        this.pong.topPlayer.won();
         this.pong.newRound();
         return;
       } else if ( this.isAtTop() ) {
+        this.pong.bottomPlayer.won();
         this.pong.newRound();
         return;
       }

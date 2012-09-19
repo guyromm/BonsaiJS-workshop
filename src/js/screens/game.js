@@ -2,8 +2,9 @@ define([
   'js/screen',
   'js/config',
   'js/ball',
-  'js/paddle'
-], function(Screen, config, Ball, Paddle){
+  'js/paddle',
+  'js/player'
+], function(Screen, config, Ball, Paddle, Player){
 
   /**
    * @constructor
@@ -91,6 +92,9 @@ define([
       }
 
       this.container = new Group().addTo(stage);
+
+      this.topPlayer = new Player(this, config.topPlayer);
+      this.bottomPlayer = new Player(this, config.bottomPlayer);
 
       this.topPaddle = new Paddle(this, true, config.topPaddle, {
         x: this.width /  2,
