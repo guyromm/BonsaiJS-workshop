@@ -1,7 +1,8 @@
 define([
   'js/screen',
-  'js/config'
-], function(Screen, config){
+  'js/config',
+  'js/ball'
+], function(Screen, config, Ball){
 
   /**
    * @constructor
@@ -13,6 +14,9 @@ define([
 
     this.width = config.viewportSize.w;
     this.height = config.viewportSize.h;
+
+    this.paddleSpeed = config.paddleSpeed;
+    this.ballSpeed = config.ballSpeed;
   }
 
   Game.prototype = {
@@ -75,7 +79,7 @@ define([
      * object to the canvas
      */
     draw: function() {
-      console.log('Woot I am drawing');
+      this.ball.draw();
     },
 
     newGame: function() {
@@ -90,6 +94,34 @@ define([
 
     newRound: function() {
 
+      // Remove old ball
+      if (this.ball) {
+        var oldBall = this.ball;
+        oldBall.bs.animate('.5s', {
+          opacity: 0
+        }, {
+          onEnd: function() {
+            oldBall.bs.remove(); // clear old ball
+          }
+        });
+      }
+
+      // Create new ball
+      this.ball = new Ball(this, config.ball, {
+        x: this.width /  2,
+        y: this.height / 2
+      });
+
+      var ball = this.ball;
+      ball.bs.attr({ opacity: 0 }).animate('.5s', {
+        opacity: 1
+      }, {
+        onEnd: function() {
+          setTimeout(function() {
+            ball.start();
+          }, 1000)
+        }
+      });
     }
 
   };
